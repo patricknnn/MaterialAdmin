@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+/* Imports. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Theme */
+$container-padding: 48px;
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 10vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+.active {
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.separator {
+  background-color: rgba(0, 0, 0, 0.12);
+  height: 1px;
+  margin: 0 0px;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.scroll-content-wrapper {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.scroll-content {
+  display: flex;
+  min-height: min-content;
+  max-height: 100%;
+}
+
+.simplebar-scrollbar::before {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.simplebar-content {
+  min-height: 100%;
+}

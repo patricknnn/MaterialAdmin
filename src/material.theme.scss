@@ -1,0 +1,39 @@
+@import "~@angular/material/theming";
+
+// Common styles for Angular Material.
+@include mat-core();
+
+// Light theme.
+$light-primary: mat-palette($mat-blue);
+$light-accent: mat-palette($mat-orange);
+$light-warn: mat-palette($mat-deep-orange);
+$light-theme: mat-light-theme(
+  (
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+      warn: $light-warn,
+    ),
+  )
+);
+
+// Dark theme.
+$dark-primary: mat-palette($mat-blue);
+$dark-accent: mat-palette($mat-orange);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
+  )
+);
+
+// Include theme styles.
+@include angular-material-theme($light-theme);
+
+.theme-dark {
+  @include angular-material-color($dark-theme);
+}
