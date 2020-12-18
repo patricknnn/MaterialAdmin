@@ -1,7 +1,10 @@
 mat-sidenav {
   width: 270px !important;
-  background: #191919 !important;
   color: #fff !important;
+  background: url("../assets/img/material-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 mat-sidenav-content {

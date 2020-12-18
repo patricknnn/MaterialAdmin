@@ -1,4 +1,4 @@
-<mat-nav-list class="d-flex flex-column h-100 overflow-hidden theme-dark">
+<mat-nav-list class="d-flex flex-column h-100 overflow-hidden theme-dark sidenav-wrapper">
 
   <!-- Header -->
   <div class="d-flex flex-row navlist-header-container">
@@ -17,28 +17,32 @@
   <div class="d-flex flex-column scroll-content-wrapper">
     <ngx-simplebar [options]="simplebarOptions" class="d-flex flex-column scroll-content">
 
-      <div *ngFor="let navlink of navlinks" class="navlink-wrapper">
-        <!-- Without children -->
-        <a mat-list-item *ngIf="!navlink.children" routerLink="{{navlink.routerLink}}" routerLinkActive="active" class="navlink txt-light mb-2">
-          <mat-icon class="material-icons-filled">{{navlink.icon}}</mat-icon>
-          <span class="pl-4">{{navlink.text}}</span>
-        </a> 
-
-        <!-- With children -->
-        <mat-expansion-panel *ngIf="navlink.children" class="navlink-expandable mat-elevation-z0">
-          <mat-expansion-panel-header style="padding: 0 16px;" class="navlink-expandable-header">
-            <div class="d-flex align-items-center">
-              <mat-icon class="material-icons-outlined">{{navlink.icon}}</mat-icon>
-              <span class="pl-4">{{navlink.text}}</span>
-            </div>
-          </mat-expansion-panel-header>
-
-          <a mat-list-item *ngFor="let child of navlink.children" routerLink="{{child.routerLink}}" routerLinkActive="active" class="navlink txt-light">
-            <mat-icon class="material-icons-outlined">{{child.icon}}</mat-icon>
-            <span class="pl-4">{{child.text}}</span>
+      <mat-accordion>
+        <div *ngFor="let navlink of navlinks" class="navlink-wrapper">
+          <!-- Without children -->
+          <a mat-list-item *ngIf="!navlink.children" routerLink="{{navlink.routerLink}}" routerLinkActive="active"
+            class="navlink txt-light mb-2">
+            <mat-icon class="material-icons-filled">{{navlink.icon}}</mat-icon>
+            <span class="pl-4">{{navlink.text}}</span>
           </a>
-        </mat-expansion-panel>
-      </div>
+
+          <!-- With children -->
+          <mat-expansion-panel *ngIf="navlink.children" class="navlink-expandable mat-elevation-z0">
+            <mat-expansion-panel-header style="padding: 0 16px;" class="navlink-expandable-header">
+              <div class="d-flex align-items-center">
+                <mat-icon class="material-icons-outlined">{{navlink.icon}}</mat-icon>
+                <span class="pl-4">{{navlink.text}}</span>
+              </div>
+            </mat-expansion-panel-header>
+
+            <a mat-list-item *ngFor="let child of navlink.children" routerLink="{{child.routerLink}}"
+              routerLinkActive="active" class="navlink navlink-nested txt-light">
+              <mat-icon class="material-icons-outlined">{{child.icon}}</mat-icon>
+              <span class="pl-4">{{child.text}}</span>
+            </a>
+          </mat-expansion-panel>
+        </div>
+      </mat-accordion>
 
     </ngx-simplebar>
   </div>
@@ -47,14 +51,12 @@
   <div class="d-flex flex-column flex-shrink-0 py-2">
     <!-- Seperator -->
     <div class="separator flex-row flex-shrink-0 mb-2"></div>
-
-    <a mat-list-item routerLink="/settings" class="txt-light">
-      <mat-icon class="material-icons-outlined">settings</mat-icon>
-      <span class="pl-2">Settings</span>
-    </a>
+    <div class="navlink-wrapper">
+      <a mat-list-item routerLink="/settings" class="navlink txt-light">
+        <mat-icon class="material-icons-outlined">settings</mat-icon>
+        <span class="pl-2">Settings</span>
+      </a>
+    </div>
   </div>
-
-
-
 
 </mat-nav-list>

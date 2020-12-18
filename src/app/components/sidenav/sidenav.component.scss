@@ -1,3 +1,10 @@
+.sidenav-wrapper {
+  padding-top: 0px;
+  background: rgba(#191919, 0.5);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
 .navlist-header-container {
   height: 60px;
   padding: 0;
@@ -39,4 +46,9 @@
 
 .navlink-expandable-header.mat-expanded {
   height: 48px !important;
+}
+
+.navlink-nested {
+  margin-left: -5%  !important;
+  width: 110% !important;
 }

@@ -8,7 +8,7 @@
       [mode]="mobileQuery.matches ? 'push' : 'side'"
       [fixedInViewport]="true"
       fixedTopGap="0"
-      class="mat-elevation-z24"
+      class="mat-elevation-z16"
       opened
     >
       <!-- Sidenav component -->
@@ -17,18 +17,21 @@
 
     <!-- Sidenav content -->
     <mat-sidenav-content>
+
       <!-- Toolbar -->
       <app-toolbar></app-toolbar>
 
+      <!-- Main content -->
       <div class="d-flex flex-column scroll-content-wrapper bg-light txt-dark">
         <ngx-simplebar
           [options]="simplebarOptions"
           class="d-flex flex-column scroll-content h-100"
         >
           <!-- Router Outlet -->
-          <div [@fadeAnimation]="getRouterOutletState(o)">
+          <div [@fadeAnimation]="getRouterOutletState(o)" style="padding-top: 56px;">
             <router-outlet #o="outlet"></router-outlet>
           </div>
+
           <!-- Footer -->
           <app-footer></app-footer>
         </ngx-simplebar>
