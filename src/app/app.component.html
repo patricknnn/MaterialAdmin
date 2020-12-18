@@ -1,17 +1,14 @@
 <!-- Main container -->
 <div class="main-container">
-
-  <!-- Toolbar -->
-  <app-toolbar></app-toolbar>
-
   <!-- Sidenav caontainer -->
   <mat-sidenav-container class="main-sidenav-container">
     <!-- Sidenav -->
     <mat-sidenav
       #sidenav
-      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [mode]="mobileQuery.matches ? 'push' : 'side'"
       [fixedInViewport]="true"
-      [fixedTopGap]="mobileQuery.matches ? '56' : '64'"
+      fixedTopGap="0"
+      class="mat-elevation-z24"
       opened
     >
       <!-- Sidenav component -->
@@ -19,9 +16,15 @@
     </mat-sidenav>
 
     <!-- Sidenav content -->
-    <mat-sidenav-content [style]="mobileQuery.matches ? 'padding-top: 56px' : 'padding-top: 64px'">
-      <div class="d-flex flex-column h-100 scroll-content-wrapper">
-        <ngx-simplebar [options]="simplebarOptions" class="d-flex flex-column scroll-content h-100">
+    <mat-sidenav-content>
+      <!-- Toolbar -->
+      <app-toolbar></app-toolbar>
+
+      <div class="d-flex flex-column scroll-content-wrapper bg-light txt-dark">
+        <ngx-simplebar
+          [options]="simplebarOptions"
+          class="d-flex flex-column scroll-content h-100"
+        >
           <!-- Router Outlet -->
           <div [@fadeAnimation]="getRouterOutletState(o)">
             <router-outlet #o="outlet"></router-outlet>

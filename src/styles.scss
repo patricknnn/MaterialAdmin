@@ -1,25 +1,27 @@
 /* Imports. */
 @import "~bootstrap/scss/bootstrap";
-
-/* Theme */
-$container-padding: 48px;
+@import "./colors.scss";
 
 /* Global styles */
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  height: 10vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
 }
 
-.container {
-  max-width: 1440px;
-  padding-left: $container-padding;
-  padding-right: $container-padding;
+.clearfix {
+  height: 70px;
 }
 
 .active {
+  border-radius: 3px !important;
+  background-color: $color-primary !important;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba($color-primary, 0.4) !important;
 }
 
 .spacer {
@@ -27,9 +29,9 @@ body {
 }
 
 .separator {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.3);
   height: 1px;
-  margin: 0 0px;
+  margin: 0 15px;
 }
 
 button:focus {
@@ -40,16 +42,22 @@ button:focus {
   flex: 1;
   display: flex;
   overflow: hidden;
+  height: 100%;
 }
 
 .scroll-content {
   display: flex;
   min-height: min-content;
-  max-height: 100%;
+  height: 100%;
 }
 
 .simplebar-scrollbar::before {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  width: 3px;
+}
+
+.bg-light .simplebar-scrollbar::before {
+  background-color: #191919 !important;
 }
 
 .simplebar-content {

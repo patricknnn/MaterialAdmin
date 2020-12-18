@@ -1,6 +1,7 @@
 mat-sidenav {
-  width: 304px;
-  background: #f5f4f4;
+  width: 270px !important;
+  background: #191919 !important;
+  color: #fff !important;
 }
 
 mat-sidenav-content {
@@ -20,3 +21,4 @@ mat-sidenav-content {
 .main-sidenav-container {
   flex: 1;
 }
+

@@ -12,9 +12,9 @@ import { SidenavService } from './services/sidenav.service';
   animations: [fadeAnimation]
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
+  title = 'Material Admin';
   @ViewChild('sidenav') public sidenav: MatSidenav;
   private _mobileQueryListener: () => void;
-  title = 'Anker Seacrew';
   mobileQuery: MediaQueryList;
   public simplebarOptions: object;
 
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener<"change">("change", this._mobileQueryListener);
-    this.simplebarOptions = {autoHide: false};
+    this.simplebarOptions = { autoHide: false };
   }
 
   ngOnInit(): void {
