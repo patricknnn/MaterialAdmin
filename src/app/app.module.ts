@@ -13,6 +13,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { PageTitleComponent } from './components/page-title/page-title.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardStatsComponent } from './components/cards/card-stats/card-stats.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SidenavComponent,
     PageTitleComponent,
     ToolbarComponent,
-    FooterComponent
+    FooterComponent,
+    CardStatsComponent
   ],
   imports: [
     BrowserModule,
