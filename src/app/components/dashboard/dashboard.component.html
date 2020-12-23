@@ -6,9 +6,10 @@
     </div>
   </div>
 
+  <!-- Stats cards -->
   <div class="row mt-5">
-    <div class="col-4">
-      <app-card-stats></app-card-stats>
+    <div *ngFor="let statsCard of statsCards" class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+      <app-card-stats [statsCard]="statsCard"></app-card-stats>
     </div>
   </div>
 

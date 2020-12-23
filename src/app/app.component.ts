@@ -29,7 +29,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     media: MediaMatcher,
     private sidenavService: SidenavService
   ) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this.mobileQuery = media.matchMedia('(max-width: 768px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener<"change">("change", this._mobileQueryListener);
     this.simplebarOptions = { autoHide: false };

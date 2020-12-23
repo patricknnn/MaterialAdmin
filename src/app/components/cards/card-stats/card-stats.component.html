@@ -1,31 +1,18 @@
-<mat-card>
-    <div class="container-fluid">
-        <div class="row mb-4">
-            <div class="col-6">
-                <div class="card-stats-icon bg-primary d-flex align-items-center justify-content-center mat-elevation-z8">
-                    <mat-icon class="txt-light">analytics</mat-icon>
-                </div>
+<mat-card class="mat-elevation-z8">
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-between mb-1">
+            <div class="card-stats-icon bg-primary d-flex align-items-center justify-content-center mat-elevation-z8">
+                <mat-icon class="txt-light">{{cardStats.icon}}</mat-icon>
             </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-12 d-flex align-items-center justify-content-end">
-                        <span class="">Website Visits</span>
-                    </div>
-                    <div class="col-12 d-flex align-items-center justify-content-end">
-                        <span class="font-size-large">22.250</span>
-                    </div>
-                </div>
+            <div class="card-stats-text d-flex flex-column align-items-end justify-content-center">
+                <span class="h6 txt-dark-muted">{{cardStats.subtitle}}</span>
+                <span class="h4 txt-dark">{{cardStats.title}}</span>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-12">
-                <mat-divider></mat-divider>
-            </div>
-            <div class="col-12 d-flex align-items-center mt-3">
-                <mat-icon class="mr-2">today</mat-icon>
-                <span>Last 24 Hours</span>
-            </div>
+        <mat-divider class="position-relative"></mat-divider>
+        <div class="card-stats-footer d-flex align-items-center mt-3">
+            <mat-icon class="mr-2">{{cardStats.footerIcon}}</mat-icon>
+            <span>{{cardStats.footerText}}</span>
         </div>
     </div>
 </mat-card>
