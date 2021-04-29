@@ -8,7 +8,6 @@ import { Navlink } from 'src/app/models/navlink';
 })
 export class SidenavComponent implements OnInit {
   public navlinks: Navlink[];
-  public simplebarOptions: object;
 
   constructor() {
     this.navlinks = [
@@ -27,7 +26,6 @@ export class SidenavComponent implements OnInit {
       new Navlink("Icons", "insert_photo", "/icons"),
       new Navlink("Badges", "verified", "/badges"),
     ];
-    this.simplebarOptions = {autoHide: true};
   }
 
   ngOnInit(): void {

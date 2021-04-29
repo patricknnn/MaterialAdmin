@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SimplebarAngularModule } from 'simplebar-angular';
 import { MaterialModule } from './modules/material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -31,7 +30,6 @@ import { CardStatsComponent } from './components/cards/card-stats/card-stats.com
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    SimplebarAngularModule,
     MaterialModule
   ],
   providers: [],

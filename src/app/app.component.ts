@@ -16,7 +16,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('sidenav') public sidenav: MatSidenav;
   private _mobileQueryListener: () => void;
   mobileQuery: MediaQueryList;
-  public simplebarOptions: object;
 
   /**
    * Constructor
@@ -32,7 +31,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.mobileQuery = media.matchMedia('(max-width: 768px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener<"change">("change", this._mobileQueryListener);
-    this.simplebarOptions = { autoHide: false };
   }
 
   ngOnInit(): void {
