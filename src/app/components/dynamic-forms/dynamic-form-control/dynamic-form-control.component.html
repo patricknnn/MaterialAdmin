@@ -1,0 +1,41 @@
+<div class="form-group" [formGroup]="form">
+
+  <!-- Form styling -->
+  <mat-form-field appearance="{{ formStyle }}" color="{{ formColor }}" class="w-100"
+    [ngSwitch]="inputControl.controlType">
+
+    <!-- Label -->
+    <mat-label [attr.for]="inputControl.key">{{inputControl.label}}</mat-label>
+
+    <!-- Text -->
+    <input matInput *ngSwitchCase="'textbox'" [formControlName]="inputControl.key" [id]="inputControl.key"
+      [type]="inputControl.type" />
+
+    <!-- Select -->
+    <mat-select *ngSwitchCase="'dropdown'" [formControlName]="inputControl.key" [id]="inputControl.key">
+      <mat-option *ngFor="let opt of inputControl.options" [value]="opt.key"> {{opt.value}} </mat-option>
+    </mat-select>
+
+    <!-- Date -->
+    <input matInput *ngSwitchCase="'date'" [formControlName]="inputControl.key" [id]="inputControl.key"
+      [matDatepicker]="datePicker">
+    <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-datepicker #datePicker></mat-datepicker>
+
+    <!-- Date range -->
+    <mat-date-range-input *ngSwitchCase="'date-range'" [formControlName]="inputControl.key" [id]="inputControl.key"
+      [rangePicker]="dateRangePicker">
+      <input matStartDate placeholder="Start">
+      <input matEndDate placeholder="Eind">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
+
+    <!-- Error -->
+    <mat-error *ngIf="!isValid">
+      {{inputControl.label}} is <strong>verplicht</strong>
+    </mat-error>
+
+  </mat-form-field>
+
+</div>

@@ -13,9 +13,11 @@ import { SidenavService } from './services/sidenav.service';
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'Material Admin';
-  @ViewChild('sidenav') public sidenav: MatSidenav;
-  private _mobileQueryListener: () => void;
   mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
+
+  @ViewChild('sidenav')
+  public sidenav: MatSidenav;
 
   /**
    * Constructor

@@ -13,6 +13,9 @@ import { PageTitleComponent } from './components/page-title/page-title.component
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardStatsComponent } from './components/cards/card-stats/card-stats.component';
+import { DynamicFormControlComponent } from './components/dynamic-forms/dynamic-form-control/dynamic-form-control.component';
+import { DynamicFormComponent } from './components/dynamic-forms/dynamic-form/dynamic-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,15 @@ import { CardStatsComponent } from './components/cards/card-stats/card-stats.com
     PageTitleComponent,
     ToolbarComponent,
     FooterComponent,
-    CardStatsComponent
+    CardStatsComponent,
+    DynamicFormComponent,
+    DynamicFormControlComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     NgbModule,
     MaterialModule
   ],
