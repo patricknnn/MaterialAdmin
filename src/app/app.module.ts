@@ -16,6 +16,7 @@ import { CardStatsComponent } from './components/cards/card-stats/card-stats.com
 import { DynamicFormControlComponent } from './components/dynamic-forms/dynamic-form-control/dynamic-form-control.component';
 import { DynamicFormComponent } from './components/dynamic-forms/dynamic-form/dynamic-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     NgbModule,
-    MaterialModule
+    MaterialModule,
+    SweetAlert2Module.forRoot({ provideSwal: () => import('sweetalert2/dist/sweetalert2.js') }),
   ],
   providers: [],
   bootstrap: [AppComponent]

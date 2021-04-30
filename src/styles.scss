@@ -1,8 +1,18 @@
 /* Imports. */
 @import "~bootstrap/scss/bootstrap";
 @import "./colors.scss";
+@import "./sweet-alerts.scss";
 
 /* Global styles */
+:root {
+  --animate-duration: 500ms !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,7 +21,11 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-} 
+}
+
+button {
+  text-transform: uppercase !important;
+}
 
 .mat-drawer-side {
   border-right: none !important;
@@ -53,7 +67,58 @@ button:focus {
   display: flex;
   min-height: min-content;
   height: 100%;
+  overflow: auto;
+}
+
+
+// Spinner
+
+$spinner-offset: 187;
+$spinner-duration: 1.4s;
+
+.material-spinner {
+  animation: spinner-rotator $spinner-duration linear infinite;
+}
+
+.material-spinner .path {
+  stroke-dasharray: $spinner-offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: spinner-dash $spinner-duration ease-in-out infinite,
+    spinner-colors ($spinner-duration * 4) ease-in-out infinite;
+}
+
+@keyframes spinner-rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes spinner-colors {
+  0% {
+    stroke: $color-primary;
+  }
+  100% {
+    stroke: $color-primary;
+  }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dashoffset: $spinner-offset;
+  }
+  50% {
+    stroke-dashoffset: $spinner-offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $spinner-offset;
+    transform: rotate(450deg);
+  }
 }
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";

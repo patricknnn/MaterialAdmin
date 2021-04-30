@@ -13,7 +13,13 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-3">
+    <div class="col-12">
+      <button mat-raised-button class="mr-3" (click)="showLoadingSwal()">Loading Swal</button>
+      <button mat-raised-button color="primary" class="mr-3" (click)="showPomptSwal()">Prompt Swal</button>
+      <button mat-raised-button color="accent" class="mr-3" (click)="showSuccesSwal()">Succes swal</button>
+      <button mat-raised-button color="warn" class="mr-3" (click)="showCancelSwal()">Cancel swal</button>
+    </div>
     <div class="col-12">
       <div style="height: 4000px;"></div>
     </div>
